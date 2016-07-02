@@ -20,7 +20,6 @@ function reqListener () {
   var container = document.getElementById('container');
 
   for (var i = 0; i < arrayOfRedditElements.length; i++) {
-    authors.push(arrayOfRedditElements[i].data.author);
 
     content_div = document.createElement('div');
     content_div.className = 'content_div';
@@ -37,31 +36,32 @@ function reqListener () {
 
     title_div = document.createElement('div');
     title_div.className = 'title_div';
-    //title innerHTML
+    title_div.innerHTML = arrayOfRedditElements[i].data.title;
     description_div.appendChild(title_div);
 
     details_div = document.createElement('div');
     details_div.className = 'details_div';
     description_div.appendChild(details_div);
 
+      console.log(arrayOfRedditElements[i].data.author, 'right before author span');
       author_span = document.createElement('span');
       author_span.className = 'author_span';
-      //author innerHTMl
+      author_span.innerHTML = arrayOfRedditElements[i].data.author;
       details_div.appendChild(author_span);
 
       num_comments_span = document.createElement('span');
       num_comments_span.className = 'num_comments_span';
-      //num_comments innerHTMl
+      num_comments_span.innerHTML = arrayOfRedditElements[i].data.num_comments;
       details_div.appendChild(num_comments_span);
 
       likes_span = document.createElement('span');
       likes_span.className = 'likes_span';
-      //likes innerHTMl
+      likes_span.innerHTML = arrayOfRedditElements[i].data.likes;
       details_div.appendChild(likes_span);
 
       score_span = document.createElement('span');
       score_span.className = 'score_span';
-      //score innerHTMl
+      score_span.innerHTML = arrayOfRedditElements[i].data.score;
       details_div.appendChild(score_span);
 
 
